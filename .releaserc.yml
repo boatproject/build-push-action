@@ -10,18 +10,12 @@ branches:
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@semantic-release/release-notes-generator'
-  # - '@semantic-release/changelog'
-  # - [
-  #     '@semantic-release/git',
-  #     {
-  #       assets: [CHANGELOG.md],
-  #       message: "chore(release): ${nextRelease.gitTag} \n\n${nextRelease.notes}",
-  #     }
-  #   ]
-  # - [
-  #     '@semantic-release/exec',
-  #     { 
-  #       success: "git push https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/v${{steps.semantic.outputs.new_release_major_version}}"
-  #     },
-  #   ]
-  # - ['@semantic-release/github', { successComment: false }]
+  - '@semantic-release/changelog'
+  - [
+      '@semantic-release/git',
+      {
+        assets: [CHANGELOG.md],
+        message: "chore(release): ${nextRelease.gitTag} \n\n${nextRelease.notes}",
+      }
+    ]
+  - ['@semantic-release/github', { successComment: false }]
