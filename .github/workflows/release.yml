@@ -28,6 +28,3 @@ jobs:
           -p @semantic-release/changelog@6
           -p @semantic-release/git@10
           semantic-release
-
-      - name: Push updates to branch for major version
-        run: "git push "
